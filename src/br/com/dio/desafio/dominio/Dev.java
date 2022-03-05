@@ -30,6 +30,26 @@ public class Dev {
                 .sum();
     }
 
+    private int totalHoras(Bootcamp bootcamp) {
+        return this.conteudosConcluidos
+                .stream()
+                .mapToInt(conteudo -> conteudo.cargaHoraria())
+                .sum();
+    }
+
+    public void imprimirCertificado(Bootcamp bootcamp) {
+        int totalHoras;
+        if (conteudosInscritos.isEmpty()) {
+            totalHoras = totalHoras(bootcamp);
+            System.out.println("Certificamos que o desenvolvedor " + this.nome
+                    + " concluíu o Bootcamp " + bootcamp.getNome()
+                    + " com carga horária de " + totalHoras
+            + " horas.");
+            return;
+        }
+        System.out.println("Bootcamp em andamento. Por favor, finalize os conteúdos!!!");
+    }
+
     public String getNome() {
         return nome;
     }

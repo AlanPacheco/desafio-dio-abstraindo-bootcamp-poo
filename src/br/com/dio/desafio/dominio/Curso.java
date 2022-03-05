@@ -12,7 +12,8 @@ public class Curso extends Conteudo{
         return XP_PADRAO * cargaHoraria;
     }
 
-    public int getCargaHoraria() {
+    @Override
+    public int cargaHoraria() {
         return cargaHoraria;
     }
 

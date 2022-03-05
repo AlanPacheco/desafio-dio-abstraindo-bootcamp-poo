@@ -7,6 +7,10 @@ public abstract class Conteudo {
 
     public abstract double calcularXP();
 
+    public int cargaHoraria(){
+        return 2;
+    }
+
     public String getTitulo() {
         return titulo;
     }

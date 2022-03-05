@@ -52,6 +52,7 @@ public class Main {
         System.out.println("### Conteudos Concluidos ###");
         devAlan.progredir();
         devAlan.progredir();
+        devAlan.progredir();
         System.out.println("Conteudos Concluidos Alan: " +devAlan.getConteudosConcluidos());
         devJoao.progredir();
         System.out.println("Conteudos Consluidos João: " +devJoao.getConteudosConcluidos());
@@ -68,7 +69,10 @@ public class Main {
         System.out.println("Conteudos Inscritos Alan: " +devAlan.getConteudosInscritos());
         System.out.println("Conteudos Inscritos João: " +devJoao.getConteudosInscritos());
 
+        System.out.println("###   Imprimir Certificados   ###");
 
+        devAlan.imprimirCertificado(bootcamp);
+        devJoao.imprimirCertificado(bootcamp);
 
 
     }
