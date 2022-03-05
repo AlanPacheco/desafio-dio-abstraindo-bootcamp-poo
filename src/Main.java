@@ -1,6 +1,4 @@
-import br.com.dio.desafio.dominio.Conteudo;
-import br.com.dio.desafio.dominio.Curso;
-import br.com.dio.desafio.dominio.Mentoria;
+import br.com.dio.desafio.dominio.*;
 
 import java.time.LocalDate;
 
@@ -24,8 +22,54 @@ public class Main {
         mentoria.setDescricao("Descrição mentoria Java");
         mentoria.setData(LocalDate.now());
 
-        System.out.println(curso1);
-        System.out.println(curso2);
-        System.out.println(mentoria);
+        Bootcamp bootcamp = new Bootcamp();
+        bootcamp.setNome("Java Developer");
+        bootcamp.setDescricao("Descrição Bootcamp Java Developer");
+        bootcamp.getConteudos().add(curso1);
+        bootcamp.getConteudos().add(curso2);
+        bootcamp.getConteudos().add(mentoria);
+
+        Dev devAlan = new Dev();
+        devAlan.setNome("Alan");
+        devAlan.inscreverBootcamp(bootcamp);
+        Dev devJoao = new Dev();
+        devJoao.setNome("João");
+        devJoao.inscreverBootcamp(bootcamp);
+
+        System.out.println();
+        System.out.println("### Conteudos Incritos ###");
+        System.out.println("Conteudos Inscritos Alan: " +devAlan.getConteudosInscritos());
+        System.out.println("Conteudos Inscritos João: " +devJoao.getConteudosInscritos());
+
+        System.out.println();
+
+        System.out.println("### Calcula XP ###");
+        System.out.println("XP - Alan: " + devAlan.calcularXp());
+        System.out.println("XP - Joao: " + devJoao.calcularXp());
+
+        System.out.println();
+
+        System.out.println("### Conteudos Concluidos ###");
+        devAlan.progredir();
+        devAlan.progredir();
+        System.out.println("Conteudos Concluidos Alan: " +devAlan.getConteudosConcluidos());
+        devJoao.progredir();
+        System.out.println("Conteudos Consluidos João: " +devJoao.getConteudosConcluidos());
+
+        System.out.println();
+
+        System.out.println("### Calcula XP ###");
+        System.out.println("XP - Alan: " + devAlan.calcularXp());
+        System.out.println("XP - Joao: " + devJoao.calcularXp());
+
+        System.out.println();
+
+        System.out.println("### Conteudos Inscritos ###");
+        System.out.println("Conteudos Inscritos Alan: " +devAlan.getConteudosInscritos());
+        System.out.println("Conteudos Inscritos João: " +devJoao.getConteudosInscritos());
+
+
+
+
     }
 }
